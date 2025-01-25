@@ -49,4 +49,9 @@ router.get("/logout",(req,res)=>{
   res.clearCookie("admin")
   res.redirect("/login")
 })
+
+router.get("/changePassword",async(req,res)=>{
+  const email=await req.cookies.admin.email
+  res.render("Pages/changePassword",{email})
+})
 module.exports = router;

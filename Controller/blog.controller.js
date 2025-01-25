@@ -3,14 +3,14 @@ const Blog = require("../Model/blog.model");
 exports.store = async (req, res) => {
   try {
     console.log(req.body);
-    const { category, title, author, description } = req.body; // Removed post from req.body
-    const post = req.file ? req.file.filename : ""; // The uploaded image filename is in req.file
+    const { category, title, author, description } = req.body;
+    const post = req.file ? req.file.filename : ""; 
 
-    const existBlog = await Blog.findOne({ title }).countDocuments().exec();
+    const existBlog = await Blog.findOne({ category }).countDocuments().exec();
     if (existBlog > 0) {
       res.json({
         success: true,
-        message: "Blog already exists",
+        message: "Blog category already exists",
       });
     } else {
       await Blog.create({ category, title, author, description, post });
