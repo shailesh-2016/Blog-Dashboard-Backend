@@ -27,19 +27,19 @@ exports.trash = async (req, res) => {
   res.redirect("/viewBlog");
 };
 
-exports.update = async (req, res) => {
-  try {
-    const { id } = req.params;
-    const { category, title, author, description, post } = req.body;
-    await Blog.findByIdAndUpdate(
-      { _id: id },
-      { category, title, author, description, post }
-    ),
-      res.redirect("/viewBlog");
-  } catch (error) {
-    console.log(error);
-  }
-};
+// exports.update = async (req, res) => {
+//   try {
+//     const { id } = req.params;
+//     const { category, title, author, description, post } = req.body;
+//     await Blog.findByIdAndUpdate(
+//       { _id: id },
+//       { category, title, author, description, post }
+//     ),
+//       res.redirect("/viewBlog");
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
 
 exports.update = async (req, res) => {
   try {
