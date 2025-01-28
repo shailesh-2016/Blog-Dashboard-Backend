@@ -70,30 +70,27 @@ exports.updateProfile = async (req, res) => {
 
 exports.changePass = async (req, res) => {
   console.log(req.body);
-  const{email,password,new_pass,confirm_pass}=req.body
+  const { email, password, new_pass, confirm_pass } = req.body;
   const existEmail = await Admin.findOne({ email }).countDocuments().exec();
-  if(existEmail > 0){
-const admin=await Admin.findOne({email})
-const match=await hashToPlain(password,admin.password)
+  if (existEmail > 0) {
+    const admin = await Admin.findOne({ email });
+    const match = await hashToPlain(password, admin.password);
 
-if(match){
-  console.log(new_pass)
-  console.log(confirm_pass)
+    if (match) {
+      console.log(new_pass);
+      console.log(confirm_pass);
 
-  if(new_pass===confirm_pass){
-    const hash_pass=await plainToHash(new_pass)
-    await Admin.updateOne(
-      {email:email},
-      {password:hash_pass}
-    )
-    res.redirect('/changePassword')
-  }else{
-    res.json("confirm password is not match")
-  }
-}else{
-  res.json("password does not match!")
-}
-  }else{
-    res.json("email not exist")
+      if (new_pass === confirm_pass) {
+        const hash_pass = await plainToHash(new_pass);
+        await Admin.updateOne({ email: email }, { password: hash_pass });
+        res.redirect("/changePassword");
+      } else {
+        res.json("confirm password is not match");
+      }
+    } else {
+      res.json("password does not match!");
+    }
+  } else {
+    res.json("email not exist");
   }
 };

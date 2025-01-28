@@ -6,7 +6,7 @@ exports.store = async (req, res) => {
     const { category, title, author, description } = req.body;
     const post = req.file ? req.file.filename : ""; 
 
-    const existBlog = await Blog.findOne({ category }).countDocuments().exec();
+    const existBlog = await Blog.findOne({ title }).countDocuments().exec();
     if (existBlog > 0) {
       res.json({
         success: true,

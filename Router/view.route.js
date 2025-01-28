@@ -54,4 +54,11 @@ router.get("/changePassword",async(req,res)=>{
   const email=await req.cookies.admin.email
   res.render("Pages/changePassword",{email})
 })
+
+router.get("/add_cat",async(req,res)=>{
+  res.render("Pages/addCat")
+})
+router.get("/view_cat",async(req,res)=>{
+  res.render("Pages/viewCat")
+})
 module.exports = router;

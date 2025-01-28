@@ -10,9 +10,7 @@
       </div>
     </div>
     <div id="main-wrapper">
-<%- include('../Layouts/header') %>
-<%- include('../Layouts/sidebar') %>
-
+      <%- include('../Layouts/header') %> <%- include('../Layouts/sidebar') %>
 
       <div class="page-wrapper">
         <div class="page-breadcrumb">
@@ -32,45 +30,95 @@
             </div>
           </div>
         </div>
-        <form class="form-horizontal" method="post" enctype="multipart/form-data" action="api/addBlog">
+        <form
+          class="form-horizontal"
+          method="post"
+          enctype="multipart/form-data"
+          action="api/addBlog"
+        >
           <div class="card-body">
-              <h4 class="card-title">Blog Info</h4>
-              <div class="form-group row">
-                  <label for="fname" class="col-sm-3 text-right control-label col-form-label">Category</label>
-                  <div class="col-sm-9">
-                      <input type="text" class="form-control" id="fname" placeholder="Add Blog Category Here" name="category">
-                  </div>
+            <h4 class="card-title">Blog Info</h4>
+            <div class="form-group row">
+              <label
+                for="fname"
+                class="col-sm-3 text-right control-label col-form-label"
+                >Category</label
+              >
+              <div class="col-sm-9">
+                <select name="category" class="form-control" id="">
+                  <option value="Book">Book</option>
+                  <option value="Movie">Movie</option>
+                </select>
               </div>
-              <div class="form-group row">
-                  <label for="fname" class="col-sm-3 text-right control-label col-form-label">Title</label>
-                  <div class="col-sm-9">
-                      <input type="text" class="form-control" id="fname" placeholder="Add Blog title " name="title">
-                  </div>
+            </div>
+            <div class="form-group row">
+              <label
+                for="fname"
+                class="col-sm-3 text-right control-label col-form-label"
+                >Title</label
+              >
+              <div class="col-sm-9">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="fname"
+                  placeholder="Add Blog title "
+                  name="title"
+                />
               </div>
-              <div class="form-group row">
-                  <label for="fname" class="col-sm-3 text-right control-label col-form-label">Author</label>
-                  <div class="col-sm-9">
-                      <input type="text" class="form-control" id="fname" placeholder="Add Blog author " name="author">
-                  </div>
+            </div>
+            <div class="form-group row">
+              <label
+                for="fname"
+                class="col-sm-3 text-right control-label col-form-label"
+                >Author</label
+              >
+              <div class="col-sm-9">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="fname"
+                  placeholder="Add Blog author "
+                  name="author"
+                />
               </div>
-              <div class="form-group row">
-                  <label for="fname" class="col-sm-3 text-right control-label col-form-label">Description</label>
-                  <div class="col-sm-9">
-                      <input type="text" class="form-control" id="fname" placeholder="Add description Here" name="description">
-                  </div>
+            </div>
+            <div class="form-group row">
+              <label
+                for="fname"
+                class="col-sm-3 text-right control-label col-form-label"
+                >Description</label
+              >
+              <div class="col-sm-9">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="fname"
+                  placeholder="Add description Here"
+                  name="description"
+                />
               </div>
-              <div class="form-group row">
-                  <label for="fname" class="col-sm-3 text-right control-label col-form-label">Post</label>
-                  <div class="col-sm-9">
-                      <input type="file" class="form-control" id="fname" name="post">
-                  </div>
+            </div>
+            <div class="form-group row">
+              <label
+                for="fname"
+                class="col-sm-3 text-right control-label col-form-label"
+                >Post</label
+              >
+              <div class="col-sm-9">
+                <input
+                  type="file"
+                  class="form-control"
+                  id="fname"
+                  name="post"
+                />
               </div>
-             
+            </div>
           </div>
-              <div class="card-body">
-                  <button class="btn btn-primary">Submit</button>
-              </div>
-      </form>
+          <div class="card-body">
+            <button class="btn btn-primary">Submit</button>
+          </div>
+        </form>
         <footer class="footer text-center">
           All Rights Reserved by Matrix-admin. Designed and Developed by
           <a href="https://wrappixel.com">WrapPixel</a>.
@@ -81,4 +129,3 @@
     <%- include('../Layouts/jsLink') %>
   </body>
 </html>
-  
