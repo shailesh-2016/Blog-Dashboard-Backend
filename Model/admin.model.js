@@ -14,7 +14,8 @@ const adminSchema = new Schema(
       ...common,
       unique: false,
     },
-    admin_profile:String
+    admin_profile:String,
+    token:String,
   },
   {
     timestamps: true,

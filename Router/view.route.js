@@ -55,10 +55,13 @@ router.get("/changePassword",async(req,res)=>{
   res.render("Pages/changePassword",{email})
 })
 
-router.get("/add_cat",async(req,res)=>{
-  res.render("Pages/addCat")
-})
-router.get("/view_cat",async(req,res)=>{
-  res.render("Pages/viewCat")
-})
+router.get("/updatePass", (req, res) => {
+  res.render("Pages/forgotPass");
+});
+// router.get("/add_cat",async(req,res)=>{
+//   res.render("Pages/addCat")
+// })
+// router.get("/view_cat",async(req,res)=>{
+//   res.render("Pages/viewCat")
+// })
 module.exports = router;
