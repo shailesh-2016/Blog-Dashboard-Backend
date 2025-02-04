@@ -37,10 +37,10 @@ router.get("/myProfile", async (req, res) => {
   // const admin = req.cookies.admin;
   // res.render("pages/myProfile", { admin });
 
-  const cookieData = req.cookies.admin;
-  const email = cookieData.email;
+  const email = req?.user?.email;
+  
   const singleAdmin = await Admin.findOne({ email });
-  res.render("Pages/myProfile", { admin: singleAdmin });
+  res.render("pages/myProfile", { admin: singleAdmin });
 });
 
 router.get("/logout", (req, res) => {
